@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        
+        <h1 class="chetada" style="text-align: center ">Carga de usuarios</h1>
+        
+         <!--comprueba si existe mensaje o no-->
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+ 
+         {% for message in messages %}
+         
+         <!--cada vez que realiza un mensaje se muestra un mensaje por html-->
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+             <strong><p>{{message}}</p></strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+         <br>
+<div class="row">
+    <div class="col-md-4">
+   
+
+
+        <div class="card card-body">
+            <form action="/agregar_contacto" method="post">
+                <label for="" class="form-label"><h4>Ingreso de datos</h4>  </label>
+               
+                <div class=form-group >
+                    <input type="text" class="form-control" name="fullname" id="" aria-describedby="helpId" placeholder="nombre completo" class="form-control">
+                </div>
+
+                <div class=form-group>
+                    <input type="text" class="form-control" name="phone" id="" aria-describedby="helpId" placeholder="Telefono" class="form-control">
+                </div>
+
+                <div class=form-group>
+                    <input type="text" class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Email" class="form-control">
+                </div>
+
+                <div class=form-group>
+                    <button type="submit" class="btn btn-primary w-100">
+                        guardar
+                    </button>
+                </div>
+            </form>              
+        </div>
+    </div>
+    <div class="col-md-8">
+       <table class="table table-striped table-bordered bg-white  table-hover">
+        
+            <thead style="text-align: center;">
+                <tr>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Operaciones </th>
+                </tr>
+            </thead>
+
+            <tbody>
+               {% for contacto in contactos%}
+                <tr aling="left" ><!--columna1,2,3...etc-->
+                    <td NOWRAP>{{contacto.1}} </td>
+                    <td NOWRAP>{{contacto.2}} </td>
+                    <td NOWRAP>{{contacto.3}} </td>
+                    <td NOWRAP>           
+                    <a href="/editar_contacto/{{contacto.0}}" class="btn btn-secondary">editar</a>
+                    <a href="/eliminar_contacto/{{contacto.0}}" class="btn btn-danger btn-delete">Borrar</a>
+                </td>
+                
+                </tr>
+               {% endfor %}
+               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+

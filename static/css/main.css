@@ -1,0 +1,37 @@
+body {
+    background: #021309;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c5a5a6, #8396d4, #84a6d8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c5a5a6, #8396d4, #84a6d8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin:0;
+}
+
+.turno {
+    margin:20px;
+   
+  }
+
+  .etiquetas{
+   background-color:aquamarine;
+  }
+
+  h1.chetada {
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
+.row {
+    padding: 20px;
+} 
+.form-label{
+    margin-top: 10px;
+    
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.navbar-brand{
+    margin-left: 10px;
+}
+.container{
+    margin-left: 10px;
+}

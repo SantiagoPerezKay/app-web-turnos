@@ -1,0 +1,78 @@
+
+<!-- Define que el documento esta bajo el estandar de HTML 5 -->
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title> Formulario de Acceso </title>    
+       
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Videojuegos & Desarrollo">
+        <meta name="description" content="Muestra de un formulario de acceso en HTML y CSS">
+        <meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+        
+        
+        <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        
+        <div id="contenedor">
+            <div id="central">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    
+                        {% for message in messages %}
+                          {{ message }}
+                         {% endfor %}
+                    
+                {% endif %}
+            {% endwith %}
+
+                <div id="login">
+                    <div class="titulo">
+                        Bienvenido
+                    </div>
+                    <form id="loginform"  action="/login" method="POST">
+                        <input type="text" name="usuario" placeholder="Usuario" required>
+                        
+                        <input type="password"  name="password" placeholder="Contraseña" required>
+                        
+                        <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                    </form>
+                    <!--<div class="pie-form">
+                        <a href="#">¿Perdiste tu contraseña?</a>
+                        <a href="#">¿No tienes Cuenta? Registrate</a>
+                    </div><-->
+                </div>
+                <div class="inferior">
+                    <a href="/">Volver</a>
+                </div>
+            </div>
+        </div>
+        
+
+        
+    </body>
+</html>

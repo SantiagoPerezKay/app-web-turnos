@@ -1,0 +1,4 @@
+
+pip install flask v2.2.3
+pip install Flask-MySQLdb 1.0.1
+pip install pywhatkit v 5.4

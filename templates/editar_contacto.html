@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+        
+        
+        <form action="/actualizar_contacto/{{contacto.0}}" method="post" >
+
+            <div class="form-group" style="text-align:center" >
+                <label for="" class="form-label"><h2>Actualizar dato</h2></label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="fullname" id="" aria-describedby="helpId" placeholder="Fullname" value="{{contacto.1}}">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="phone" id="" aria-describedby="helpId" placeholder="Phone" value="{{contacto.2}}">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Email" value="{{contacto.3}}">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success w-100">Save</button>
+            </div>
+            
+            </form>  
+                
+    </div>
+</div>
+{% endblock %}
